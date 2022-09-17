@@ -1,2 +1,2 @@
-# Hypance-Backend
+# HypanceBackend
 Hypance is Binance trade bot project. Project backend solutions
