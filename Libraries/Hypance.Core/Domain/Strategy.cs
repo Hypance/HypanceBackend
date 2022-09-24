@@ -7,11 +7,6 @@ public class Strategy
     public List<Signal> Signal { get; set; }
 
 }
-
-public class Indıcator
-{
-    public string IndıcatorName { get; set; }
-}
 public class Setting
 {
     public string SettingName { get; set; }
