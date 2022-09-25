@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hypance.Core.Domain
+namespace Hypance.Core.Domain.Strategy
 {
     public class Indicator
     {
