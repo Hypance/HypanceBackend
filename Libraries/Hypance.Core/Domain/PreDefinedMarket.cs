@@ -8,7 +8,6 @@ namespace Hypance.Core.Domain
 {
     public class PreDefinedMarket
     {
-        public string PreDefinedMarket { get; set; }
+        public List<PreDefinedMarket> PreDefinedMarket { get; set; }
     }
-
 }
