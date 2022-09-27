@@ -8,6 +8,6 @@ namespace Hypance.Core.Domain
 {
     public class PreDefinedAssets
     {
-        public string PreDefinedAssets { get; set; }
+        public List<PreDefinedAssets> PreDefinedAssets { get; set; }
     }
 }
