@@ -8,6 +8,6 @@ namespace Hypance.Core.Domain
 {
     public class BotType
     {
-        public string BotType { get; set; }
+        public List<BotType> BotType { get; set; }
     }
 }
