@@ -8,6 +8,6 @@ namespace Hypance.Core.Domain
 {
     public class PriceStrategy
     {
-        public string PriceStrategy { get; set; }
+        public List<PriceStrategy> PriceStrategy { get; set; }
     }
 }
