@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hypance.Core.Domain
+namespace Hypance.Core.Domain.Bots
 {
-    public class BotName
+    public class Name
     {
-        public string BotName { get; set; }
+        public string Name { get; set; }
     }
 }
