@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hypance.Core.Domain.Strategy
+namespace Hypance.Core.Domain.Strategies
 {
-    public class Indicator
+    public class Indicator : BaseEntity
     {
-        public string IndicatorName { get; set; }
+        public string Name { get; set; }
+        public int DefaultPeriod { get; set; }
+        public bool IsActive { get; set; }
+
     }
 }

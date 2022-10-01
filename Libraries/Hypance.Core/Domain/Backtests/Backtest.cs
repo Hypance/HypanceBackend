@@ -1,4 +1,5 @@
-﻿using Hypance.Core.Domain.Symbols;
+﻿using Hypance.Core.Domain.Strategies;
+using Hypance.Core.Domain.Symbols;
 
 namespace Hypance.Core.Domain.Backtests
 {
@@ -9,7 +10,7 @@ namespace Hypance.Core.Domain.Backtests
         public List<OrderType> OrderTypes { get; set; }
         public List<PositionType> Positiontypes { get; set; }
         public List<Symbol> Symbols { get; set; }
-        public List<PredefinedStrategy> PredefinedStrategy { get; set; }
+        public List<Strategy> Strategy { get; set; }
         public List<Formation> Formation { get; set; }
         public string TrendStrategy { get; set; }
     }
