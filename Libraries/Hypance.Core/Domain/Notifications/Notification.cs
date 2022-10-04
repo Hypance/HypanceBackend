@@ -19,7 +19,7 @@ namespace Hypance.Core.Domain.Notifications
         public List<Symbol> Symbols { get; set; }
         public List<Strategy> Strategy { get; set; }
         public List<Formation> Formation {get; set; }
-        public string TrendStrategy { get; set; }
+        public TrendStrategy TrendStrategy { get; set; }
         public List<MessageChannel> MessageChannels {get; set; }   
     }
 }

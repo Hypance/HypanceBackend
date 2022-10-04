@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\Hypance.Core\Hypance.Core.csproj" />
+    <ProjectReference Include="..\..\Libraries\Hypance.Data\Hypance.Data.csproj" />
+    <ProjectReference Include="..\..\Libraries\Hypance.Services\Hypance.Services.csproj" />
   </ItemGroup>
 
 </Project>
