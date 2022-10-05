@@ -5,18 +5,14 @@ using Hypance.Core.Domain.Notifications;
 using Hypance.Core.Domain.Strategies;
 using Hypance.Core.Domain.Symbols;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hypance.Data.DataProviders
 {
     public class HypanceDbContext : DbContext 
     {
 
-        public HypanceDbContext(DbContextOptions<HypanceDbContext> options) : base(options) { }
+        public HypanceDbContext(DbContextOptions options) : base(options)
+        { }
       
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 namespace Hypance.Data
 {
     static class Configuration
@@ -17,9 +15,8 @@ namespace Hypance.Data
                 get
                 {
                     ConfigurationManager configurationManager = new();
-
-                    System.Diagnostics.Debug.WriteLine(Directory.GetCurrentDirectory().ToString());
-                    configurationManager.SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../Hypance.WebApi"));
+                    var combine = Directory.GetCurrentDirectory().Replace("/Libraries/Hypance.Data", "/Presenentation/Hypance.WebApi");
+                    configurationManager.SetBasePath(Path.Combine(combine));
                     configurationManager.AddJsonFile("appsettings.json");
 
                     return configurationManager.GetConnectionString("PostgreSQL");
