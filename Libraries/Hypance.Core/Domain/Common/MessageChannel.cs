@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hypance.Core.Domain.Bots
+namespace Hypance.Core.Domain.Common
 {
-    public class Name
+    public enum MessageChannel
     {
-        public string Name { get; set; }
+        Telegram = 0,
+        Discord = 1
     }
 }
