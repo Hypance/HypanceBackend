@@ -12,6 +12,7 @@
     "Hypance.WebApi": {
       "commandName": "Project",
       "launchBrowser": true,
+      "launchUrl": "swagger",
       "applicationUrl": "http://localhost:31377",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

@@ -3,7 +3,7 @@
 namespace Hypance.WebApi.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/[action]")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -28,6 +28,26 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+
+    [HttpPost(Name = "PostWeatherForecast")]
+    public ActionResult PostFrontendTest(FrontendTest model)
+    {
+        var test = model;
+
+        return Ok();
+    }
+
+
+    public class FrontendTest
+    {
+        public string StrategyName { get; set; }
+        public string StrategyDescription { get; set; }
+        public string SignalName { get; set; }
+        public string Period { get; set; }
+        public string Indicator { get; set; }
+        public string Setting { get; set; }
+        public string StrategyTrend { get; set; }
     }
 }
 
