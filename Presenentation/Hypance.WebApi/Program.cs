@@ -1,12 +1,14 @@
 ﻿using Hypance.Data;
+using Hypance.Services;
+using Hypance.Services.Symbols;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 // Add services to the container.
 builder.Services.AddControllers();
+builder.Services.AddInfrastructureServices();
 builder.Services.AddPersistenceServices();
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
