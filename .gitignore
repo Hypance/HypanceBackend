@@ -33,3 +33,4 @@ msbuild.wrn
 # Visual Studio 2015
 .vs/
 Presenentation/Hypance.WebApi/devsettings.json
+devsettings.json
