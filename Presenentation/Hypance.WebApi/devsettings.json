@@ -1,0 +1,13 @@
+﻿{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*",
+    "ConnectionStrings": {
+        "PostgreSQL": "UserID=postgres;Password=s70UfP9Q1B2UjQr4ds;Host=176.53.65.160;Port=5432;Database=hypance;"
+    }
+}
+

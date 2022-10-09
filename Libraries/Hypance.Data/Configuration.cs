@@ -17,7 +17,7 @@ namespace Hypance.Data
                     ConfigurationManager configurationManager = new();
                     var combine = Directory.GetCurrentDirectory().Replace("/Libraries/Hypance.Data", "/Presenentation/Hypance.WebApi");
                     configurationManager.SetBasePath(Path.Combine(combine));
-                    configurationManager.AddJsonFile("appsettings.json");
+                    configurationManager.AddJsonFile("devsettings.json");
 
                     return configurationManager.GetConnectionString("PostgreSQL");
                 }
