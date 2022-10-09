@@ -33,17 +33,29 @@ namespace Hypance.Data
 
         public void Add(T entity)
         {
-            _hypanceDbContext.Add<T>(entity);
+            try
+            {
+              _hypanceDbContext.Add<T>(entity);
+              _hypanceDbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+           
         }
 
         public void Update(T entity)
         {
             _hypanceDbContext.Update<T>(entity);
+            _hypanceDbContext.SaveChanges();
         }
 
         public void Delete(T entity)
         {
             _hypanceDbContext.Remove<T>(entity);
+            _hypanceDbContext.SaveChanges();
         }
 
     }

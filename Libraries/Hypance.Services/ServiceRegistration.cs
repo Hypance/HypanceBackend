@@ -1,4 +1,5 @@
 ﻿using System;
+using Hypance.Core.Domain.Strategies;
 using Hypance.Core.Domain.Symbols;
 using Hypance.Data;
 using Hypance.Services.Symbols;
@@ -11,6 +12,7 @@ namespace Hypance.Services
 	{
         public static void AddInfrastructureServices(this IServiceCollection serviceCollection)
         {
+            serviceCollection.AddScoped<IRepository<Strategy>, EntityRepository<Strategy>>();
             serviceCollection.AddScoped<IRepository<Symbol>, EntityRepository<Symbol>>();
             serviceCollection.AddScoped<ISymbolService,SymbolService>();
         }
