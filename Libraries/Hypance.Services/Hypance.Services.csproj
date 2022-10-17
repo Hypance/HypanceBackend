@@ -6,4 +6,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Symbols\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Symbols\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Hypance.Core\Hypance.Core.csproj" />
+    <ProjectReference Include="..\Hypance.Data\Hypance.Data.csproj" />
+  </ItemGroup>
 </Project>
