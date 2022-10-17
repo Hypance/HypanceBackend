@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.Services", "Librari
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.WebApi", "Presenentation\Hypance.WebApi\Hypance.WebApi.csproj", "{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.ScheduledTask", "Hypance.ScheduledTask\Hypance.ScheduledTask.csproj", "{CBC4582E-E900-44AE-B12E-B4055EF4CDF2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.ScheduledTask", "ScheduledTask\Hypance.ScheduledTask\Hypance.ScheduledTask.csproj", "{0B766169-B04E-4648-A592-76AFF9F44250}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBC4582E-E900-44AE-B12E-B4055EF4CDF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBC4582E-E900-44AE-B12E-B4055EF4CDF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBC4582E-E900-44AE-B12E-B4055EF4CDF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBC4582E-E900-44AE-B12E-B4055EF4CDF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B766169-B04E-4648-A592-76AFF9F44250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B766169-B04E-4648-A592-76AFF9F44250}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B766169-B04E-4648-A592-76AFF9F44250}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B766169-B04E-4648-A592-76AFF9F44250}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
