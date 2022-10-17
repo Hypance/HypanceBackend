@@ -13,13 +13,13 @@ namespace Hypance.Core.Domain.Notifications
     public class Notification : BaseEntity
     {
         public string Name {get; set; }
-        public Market Market {get; set; }
-        public OrderType OrderType {get; set; }
-        public PositionType PositionType {get; set; }
+        public List<Market> Markets {get; set; }
+        public List<OrderType> OrderTypes{get; set; }
+        public List<PositionType> PositionTypes{get; set; }
+        public List<Symbol> Symbols { get; set; }
+        public List<Strategy> Strategy { get; set; }
+        public List<Formation> Formation {get; set; }
         public TrendStrategy TrendStrategy { get; set; }
-        public MessageChannel MessageChannel {get; set; }
-        public ICollection<Symbol> Symbols { get; set; }
-        public ICollection<Strategy> Strategy { get; set; }
-        public ICollection<Formation> Formation { get; set; }
+        public List<MessageChannel> MessageChannels {get; set; }   
     }
 }
