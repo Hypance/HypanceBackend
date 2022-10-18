@@ -13,18 +13,10 @@ namespace Hypance.Data.DataProviders
 
         public HypanceDbContext(DbContextOptions options) : base(options)
         { }
-
-        public HypanceDbContext()
-        {
-        }
-
+      
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<Symbol>().HasNoKey();
-            modelBuilder.Entity<Backtest>().HasNoKey();
-            modelBuilder.Entity<Bot>().HasNoKey();
-            modelBuilder.Entity<Notification>().HasNoKey();
         }
 
         public DbSet<Backtest> Backtests { get; set; }
@@ -32,10 +24,9 @@ namespace Hypance.Data.DataProviders
         public DbSet<Formation> Formations { get; set; }
         public DbSet<Notification> Notifications { get; set; }
         public DbSet<Indicator> Indicators { get; set; }
-        public DbSet<IndicatorSignal> IndicatorSignals { get; set; }
         public DbSet<Signal> Signals { get; set; }
         public DbSet<Strategy> Strategies { get; set; }
         public DbSet<Symbol> Symbols { get; set; }
-        public DbSet<Candlestick> Candlesticks { get; set; }
+       
     }
 }
