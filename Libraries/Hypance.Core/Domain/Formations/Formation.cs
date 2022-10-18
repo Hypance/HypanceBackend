@@ -11,9 +11,5 @@ namespace Hypance.Core.Domain.Formations
     public class Formation : BaseEntity
     {
         public string Name { get; set; }
-        public List<Indicator> Indicators { get; set; }
-        public List<SignalResult> SignalResults { get; set; }
-        public int Period { get; set; }
-        public Interval Interval { get; set; }
     }
 }

@@ -11,7 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.Services", "Librari
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.WebApi", "Presenentation\Hypance.WebApi\Hypance.WebApi.csproj", "{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.ScheduledTask", "ScheduledTask\Hypance.ScheduledTask\Hypance.ScheduledTask.csproj", "{0B766169-B04E-4648-A592-76AFF9F44250}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{8F83706A-B74D-49BF-BD78-4001EC8EF7DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presenentation", "Presenentation", "{FF2C3635-23E1-46FE-B091-7FF905785C8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScheduledTask", "ScheduledTask", "{2717AC29-9F24-4C1F-A7CC-6B98DC73A679}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hypance.ScheduledTask", "ScheduledTask\Hypance.ScheduledTask\Hypance.ScheduledTask.csproj", "{529E57BB-137F-45ED-8D68-0E1643334C1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,15 +41,22 @@ Global
 		{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B766169-B04E-4648-A592-76AFF9F44250}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B766169-B04E-4648-A592-76AFF9F44250}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B766169-B04E-4648-A592-76AFF9F44250}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B766169-B04E-4648-A592-76AFF9F44250}.Release|Any CPU.Build.0 = Release|Any CPU
+		{529E57BB-137F-45ED-8D68-0E1643334C1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{529E57BB-137F-45ED-8D68-0E1643334C1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{529E57BB-137F-45ED-8D68-0E1643334C1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{529E57BB-137F-45ED-8D68-0E1643334C1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16963ED9-E8C3-4B35-B5CC-3677099945C1}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28A92B48-A8FA-44A6-A2D7-7AE834E6A2AF} = {8F83706A-B74D-49BF-BD78-4001EC8EF7DF}
+		{0157CEE5-FA19-41D2-AE41-0C187B693C6C} = {8F83706A-B74D-49BF-BD78-4001EC8EF7DF}
+		{25F0F8C2-CF61-4B50-AB62-9D62FD5308E8} = {8F83706A-B74D-49BF-BD78-4001EC8EF7DF}
+		{D2EB1F1F-DC79-4229-AC70-2B0C3F0C88B4} = {FF2C3635-23E1-46FE-B091-7FF905785C8B}
+		{529E57BB-137F-45ED-8D68-0E1643334C1C} = {2717AC29-9F24-4C1F-A7CC-6B98DC73A679}
 	EndGlobalSection
 EndGlobal
