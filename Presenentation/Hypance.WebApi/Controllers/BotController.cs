@@ -1,4 +1,5 @@
 ﻿using Hypance.Core.Domain.Bots;
+using Hypance.Core.Domain.Strategies;
 using Hypance.Core.Domain.Symbols;
 using Hypance.Data;
 using Microsoft.AspNetCore.Http;
@@ -16,9 +17,28 @@ namespace Hypance.WebApi.Controllers
             _botRepository = botRepository;
         }
         [HttpGet]
-        public IEnumerable<Bot> GetAll()
+        public IEnumerable<string> GetAll()
         {
-            return _botRepository.GetAll();
+            return new string[] { "value1", "value2" };
+        }
+        [HttpGet]
+        public string Get(int id)
+        {
+            return "value";
+        }
+        [HttpPost]
+        public IActionResult Post(Bot bot)
+        {
+            _botRepository.Add(bot);
+            return Ok();
+        }
+        [HttpPost]
+        public void Put()
+        {
+        }
+        [HttpDelete]
+        public void Delete()
+        {
         }
     }
 }
