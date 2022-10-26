@@ -32,7 +32,7 @@ namespace Hypance.WebApi.Controllers
             _botRepository.Add(bot);
             return Ok();
         }
-        [HttpPost]
+        [HttpPut]
         public void Put()
         {
         }
