@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
 using Hypance.Core.Domain;
+using Hypance.Core.Utilites;
 using Hypance.Data.DataProviders;
 using Microsoft.EntityFrameworkCore;
+
 
 namespace Hypance.Data
 {
@@ -15,47 +17,75 @@ namespace Hypance.Data
             _hypanceDbContext = hypanceDbContext;
         }
 
-        public List<T> GetAll(Expression<Func<T, bool>> filter)
-        {
-            return filter == null ?
-                _hypanceDbContext.Set<T>().ToList() :
-                _hypanceDbContext.Set<T>().Where(filter).ToList();
-        }
-
-        public T Get(Expression<Func<T, bool>> filter)
-        {
-            var query = _hypanceDbContext.Set<T>().FirstOrDefault(filter);
-            if (query != null)
-                return query;
-
-            return default(T);
-        }
-
-        public void Add(T entity)
+        public IDataResult<List<T>> GetAll(Expression<Func<T, bool>> filter)
         {
             try
             {
-              _hypanceDbContext.Add<T>(entity);
-              _hypanceDbContext.SaveChanges();
+                var data = filter == null ?
+                _hypanceDbContext.Set<T>().ToList() :
+                _hypanceDbContext.Set<T>().Where(filter).ToList();
+                return new SuccessDataResult<List<T>>(data);
+            }
+            catch (System.Exception ex)
+            {
+                return new ErrorDataResult<List<T>>(ex.Message);
+            }
+        }
+
+        public IDataResult<T> Get(Expression<Func<T, bool>> filter)
+        {
+            try
+            {
+                var query = _hypanceDbContext.Set<T>().FirstOrDefault(filter);
+                return new SuccessDataResult<T>(query);
+            }
+            catch (System.Exception ex)
+            {
+                return new ErrorDataResult<T>(ex.Message);
+            }
+        }
+
+        public IResult Add(T entity)
+        {
+            try
+            {
+                _hypanceDbContext.Add<T>(entity);
+                _hypanceDbContext.SaveChanges();
+                return new SuccessResult();
             }
             catch (Exception ex)
             {
-
-                throw;
+                return new ErrorResult(ex.Message);
             }
-           
+
         }
 
-        public void Update(T entity)
+        public IResult Update(T entity)
         {
-            _hypanceDbContext.Update<T>(entity);
-            _hypanceDbContext.SaveChanges();
+            try
+            {
+                _hypanceDbContext.Update<T>(entity);
+                _hypanceDbContext.SaveChanges();
+                return new SuccessResult();
+            }
+            catch (System.Exception ex)
+            {
+                return new ErrorResult(ex.Message);
+            }
         }
 
-        public void Delete(T entity)
+        public IResult Delete(T entity)
         {
-            _hypanceDbContext.Remove<T>(entity);
-            _hypanceDbContext.SaveChanges();
+            try
+            {
+                _hypanceDbContext.Remove<T>(entity);
+                _hypanceDbContext.SaveChanges();
+                return new SuccessResult();
+            }
+            catch (System.Exception ex)
+            {
+                return new ErrorResult(ex.Message);
+            }
         }
 
     }
