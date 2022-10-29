@@ -1,9 +1,11 @@
 ﻿using System;
 using Hypance.Core.Domain.Bots;
+using Hypance.Services.Bots;
+using Hypance.Core.Domain.Backtests;
 using Hypance.Core.Domain.Strategies;
 using Hypance.Core.Domain.Symbols;
 using Hypance.Data;
-using Hypance.Services.Bots;
+using Hypance.Services.Backtests;
 using Hypance.Services.Symbols;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -19,6 +21,8 @@ namespace Hypance.Services
             serviceCollection.AddScoped<ISymbolService,SymbolService>();
             serviceCollection.AddScoped<IRepository<Bot>, EntityRepository<Bot>>();
             serviceCollection.AddScoped<IBotService, BotService>();
+            serviceCollection.AddScoped<IRepository<Backtest>, EntityRepository<Backtest>>();
+            serviceCollection.AddScoped<IBacktestService, BacktestService>();
         }
     }
 }
