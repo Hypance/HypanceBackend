@@ -16,29 +16,45 @@ namespace Hypance.WebApi.Controllers
         {
             _botRepository = botRepository;
         }
+        
         [HttpGet]
-        public IEnumerable<string> GetAll()
+        public List<Bot> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            var model = _botRepository.GetAll();
+
+            return model;
         }
-        [HttpGet]
-        public string Get(int id)
+        
+        [HttpGet("{id}")]
+        public Bot Get(int id)
         {
-            return "value";
+            var model = _botRepository.Get(x => x.Id == id);
+
+            return model;
         }
+
         [HttpPost]
         public IActionResult Post(Bot bot)
         {
             _botRepository.Add(bot);
+
             return Ok();
         }
+       
         [HttpPut]
-        public void Put()
+        public IActionResult Put(Bot bot)
         {
+            _botRepository.Update(bot);
+
+            return Ok();
         }
+       
         [HttpDelete]
-        public void Delete()
+        public IActionResult Delete(Bot bot)
         {
+            _botRepository.Delete(bot);
+
+            return Ok();
         }
     }
 }
