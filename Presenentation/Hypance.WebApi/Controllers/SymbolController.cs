@@ -26,7 +26,8 @@ namespace Hypance.WebApi.Controllers
         [HttpGet]
         public IEnumerable<Symbol> GetAll()
         {
-            return _symbolRepository.GetAll();
+            var result = _symbolRepository.GetAll();
+            return result.Data;
         }
 
         

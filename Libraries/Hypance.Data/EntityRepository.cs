@@ -3,7 +3,6 @@ using System.Linq.Expressions;
 using Hypance.Core.Domain;
 using Hypance.Core.Utilites;
 using Hypance.Data.DataProviders;
-using Microsoft.EntityFrameworkCore;
 
 
 namespace Hypance.Data

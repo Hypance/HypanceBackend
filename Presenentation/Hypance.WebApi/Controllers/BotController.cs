@@ -22,7 +22,7 @@ namespace Hypance.WebApi.Controllers
         {
             var model = _botRepository.GetAll();
 
-            return model;
+            return model.Data;
         }
         
         [HttpGet("{id}")]
@@ -30,7 +30,7 @@ namespace Hypance.WebApi.Controllers
         {
             var model = _botRepository.Get(x => x.Id == id);
 
-            return model;
+            return model.Data;
         }
 
         [HttpPost]

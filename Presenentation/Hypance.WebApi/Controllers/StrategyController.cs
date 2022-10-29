@@ -23,7 +23,7 @@ namespace Hypance.WebApi.Controllers
         public List<Strategy> GetAll()
         {
             var model = _strategyRepository.GetAll(); 
-            return model;
+            return model.Data;
         }
 
         // GET api/<StrategyController>/5
@@ -31,7 +31,7 @@ namespace Hypance.WebApi.Controllers
         public Strategy Get(int id)
         {
             var model = _strategyRepository.Get(x => x.Id == id);
-            return model;
+            return model.Data;
         }
 
         // POST api/<StrategyController>
