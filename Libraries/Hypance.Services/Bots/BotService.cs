@@ -8,6 +8,6 @@ namespace Hypance.Services.Bots
 {
     public class BotService : IBotService
     {
-
+        
     }
 }
