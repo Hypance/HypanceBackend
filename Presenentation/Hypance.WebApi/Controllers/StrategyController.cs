@@ -1,6 +1,7 @@
 ﻿using Hypance.Core.Domain.Strategies;
 using Hypance.Data;
 using Microsoft.AspNetCore.Mvc;
+using Hypance.Services.TelegramApi;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,6 +23,8 @@ namespace Hypance.WebApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            TelegramApiConfig.Main();
+            
             return new string[] { "value1", "value2" };
         }
 
