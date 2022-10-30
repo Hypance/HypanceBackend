@@ -21,18 +21,18 @@ namespace Hypance.WebApi.Controllers
 
         // GET: api/<StrategyController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public List<Strategy> GetAll()
         {
-            TelegramApiConfig.Main();
-            
-            return new string[] { "value1", "value2" };
+            var model = _strategyRepository.GetAll(); 
+            return model.Data;
         }
 
         // GET api/<StrategyController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public Strategy Get(int id)
         {
-            return "value";
+            var model = _strategyRepository.Get(x => x.Id == id);
+            return model.Data;
         }
 
         // POST api/<StrategyController>
@@ -45,15 +45,19 @@ namespace Hypance.WebApi.Controllers
         }
 
         // PUT api/<StrategyController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public IActionResult Put(Strategy strategy)
         {
+            _strategyRepository.Update(strategy);
+            return Ok();
         }
 
         // DELETE api/<StrategyController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public IActionResult Delete(Strategy strategy)
         {
+           _strategyRepository.Delete(strategy);
+           return Ok();
         }
     }
 }
