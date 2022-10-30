@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Hypance.Core.Domain.Strategies;
 using Hypance.Core.Domain.Symbols;
 using Hypance.Data;
+using Hypance.Services.TelegramApi;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
