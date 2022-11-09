@@ -13,9 +13,6 @@
     <Folder Include="Symbols\" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Telegram.Bot" Version="18.0.0" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Hypance.Core\Hypance.Core.csproj" />
     <ProjectReference Include="..\Hypance.Data\Hypance.Data.csproj" />
   </ItemGroup>

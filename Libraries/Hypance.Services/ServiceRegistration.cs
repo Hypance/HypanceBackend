@@ -8,7 +8,7 @@ using Hypance.Data;
 using Hypance.Services.Backtests;
 using Hypance.Services.Symbols;
 using Microsoft.Extensions.DependencyInjection;
-
+using Hypance.Services.CandelStick;
 
 namespace Hypance.Services
 {
@@ -25,6 +25,8 @@ namespace Hypance.Services
             serviceCollection.AddScoped<IBotService, BotService>();
             serviceCollection.AddScoped<IRepository<Backtest>, EntityRepository<Backtest>>();
             serviceCollection.AddScoped<IBacktestService, BacktestService>();
+            serviceCollection.AddScoped<ICandlestickServices, CandlestickServices>();
+
         }
     }
 }
