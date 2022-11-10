@@ -5,7 +5,7 @@ using Hypance.Services.TelegramApi;
 
 
 
-namespace Hypance.WebApi.Controllers
+namespace Presentation.Hypance.WebApi.Controllers.IndicatorControllers
 {
 
     [ApiController]
