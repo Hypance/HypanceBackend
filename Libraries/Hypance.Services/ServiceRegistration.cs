@@ -19,6 +19,8 @@ namespace Hypance.Services
             serviceCollection.AddScoped<IRepository<Strategy>, EntityRepository<Strategy>>();
             serviceCollection.AddScoped<IRepository<Symbol>, EntityRepository<Symbol>>();
             serviceCollection.AddScoped<ISymbolService,SymbolService>();
+            serviceCollection.AddScoped<IRepository<IndicatorSignal>, EntityRepository<IndicatorSignal>>();
+            serviceCollection.AddScoped<IRepository<Signal>, EntityRepository<Signal>>();
             serviceCollection.AddScoped<IRepository<Bot>, EntityRepository<Bot>>();
             serviceCollection.AddScoped<IBotService, BotService>();
             serviceCollection.AddScoped<IRepository<Backtest>, EntityRepository<Backtest>>();

@@ -1,6 +1,7 @@
 ﻿using Hypance.Core.Domain.Strategies;
 using Hypance.Data;
 using Microsoft.AspNetCore.Mvc;
+using Hypance.Services.TelegramApi;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,7 +24,7 @@ namespace Hypance.WebApi.Controllers
         public List<Strategy> GetAll()
         {
             var model = _strategyRepository.GetAll(); 
-            return model;
+            return model.Data;
         }
 
         // GET api/<StrategyController>/5
@@ -31,7 +32,7 @@ namespace Hypance.WebApi.Controllers
         public Strategy Get(int id)
         {
             var model = _strategyRepository.Get(x => x.Id == id);
-            return model;
+            return model.Data;
         }
 
         // POST api/<StrategyController>

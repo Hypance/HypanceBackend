@@ -25,7 +25,8 @@ namespace Hypance.WebApi.Controllers
         [HttpGet]
         public IEnumerable<Backtest> GetAll()
         {
-            return _backtestRepository.GetAll();
+            var result = _backtestRepository.GetAll();
+            return result.Data;
         }
 
         // PUT api/<BacktestController>
