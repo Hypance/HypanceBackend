@@ -12,9 +12,9 @@ namespace Hypance.Core.Domain.Backtests
         public OrderType OrderType { get; set; }
         public PositionType PositionType { get; set; }
         public TrendStrategy TrendStrategy { get; set; }
-        public int[] Symbols { get; set; }
-        public int[] Strategy { get; set; }
-        public int[] Formation { get; set; }
+        public int[]? Symbols { get; set; }
+        public int[]? Strategy { get; set; }
+        public int[]? Formation { get; set; }
         public DateTime Start { get; set; }
         public DateTime Finish { get; set; }
     }
