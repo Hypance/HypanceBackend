@@ -9,6 +9,5 @@ namespace Hypance.Services.Bots
 {
     public interface IBotService
     {
-        IResult GetAllBots();
     }
 }
