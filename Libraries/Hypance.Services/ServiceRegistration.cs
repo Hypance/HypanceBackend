@@ -25,6 +25,7 @@ namespace Hypance.Services
             serviceCollection.AddScoped<IBotService, BotService>();
             serviceCollection.AddScoped<IRepository<Backtest>, EntityRepository<Backtest>>();
             serviceCollection.AddScoped<IBacktestService, BacktestService>();
+            serviceCollection.AddScoped<IRepository<Indicator>, EntityRepository<Indicator>>();
         }
     }
 }
