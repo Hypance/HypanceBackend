@@ -9,7 +9,7 @@ namespace Hypance.Core.Domain.Formations
 {
     public class FormationSignal : BaseEntity
     {
-        public string IndicatorName { get; set; }
+        public string FormationSignalName { get; set; }
         public string SymbolName { get; set; }
         public int Period { get; set; }
         public Interval Interval { get; set; }
