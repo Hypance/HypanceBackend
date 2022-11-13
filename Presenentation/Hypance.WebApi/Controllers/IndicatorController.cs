@@ -1,11 +1,13 @@
-﻿using Hypance.Core.Domain.Strategies;
+﻿using Hypance.Core.Domain.Bots;
+using Hypance.Core.Domain.Strategies;
+using Hypance.Core.Domain.Symbols;
 using Hypance.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Hypance.Services.TelegramApi;
 
 
 
-namespace Presentation.Hypance.WebApi.Controllers.IndicatorControllers
+namespace Hypance.WebApi.Controllers
 {
 
     [ApiController]
@@ -32,32 +34,42 @@ namespace Presentation.Hypance.WebApi.Controllers.IndicatorControllers
         public Indicator Get(int id)
         {
             var model = _indicatorRepository.Get(x => x.Id == id);
-            return model.Data;
+            if (model.Success)
+                return model.Data;
+            return new Indicator();
         }
 
      
         [HttpPost]
         public IActionResult Post(Indicator indicator)
         {
-            _indicatorRepository.Add(indicator);
+            var result = _indicatorRepository.Update(indicator);
+            if (result.Success)
+                return Ok();
 
-            return Ok();
+            return BadRequest();
         }
 
       
         [HttpPut]
         public IActionResult Put(Indicator indicator)
         {
-            _indicatorRepository.Update(indicator);
-            return Ok();
+            var result = _indicatorRepository.Update(indicator);
+            if (result.Success)
+                return Ok();
+
+            return BadRequest();
         }
 
       
         [HttpDelete]
         public IActionResult Delete(Indicator indicator)
         {
-            _indicatorRepository.Delete(indicator);
-            return Ok();
+            var result = _indicatorRepository.Delete(indicator);
+            if (result.Success)
+                return Ok();
+
+            return BadRequest();
         }
     }
 }
