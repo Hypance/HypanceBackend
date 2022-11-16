@@ -21,10 +21,6 @@ namespace Hypance.Data.DataProviders
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<Symbol>().HasNoKey();
-            modelBuilder.Entity<Backtest>().HasNoKey();
-            modelBuilder.Entity<Bot>().HasNoKey();
-            modelBuilder.Entity<Notification>().HasNoKey();
         }
 
         public DbSet<Backtest> Backtests { get; set; }

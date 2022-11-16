@@ -13,13 +13,14 @@ namespace Hypance.Core.Domain.Bots
     public class Bot : BaseEntity
     {
         public string Name { get; set; }
+        public string Description { get; set; }
         public Market Market { get; set; }
         public OrderType OrderType { get; set; }
         public PositionType PositionType { get; set; }
         public TrendStrategy TrendStrategy { get; set; }
-        public ICollection<Symbol> Symbols { get; set; }
-        public ICollection<Strategy> Strategy { get; set; }
-        public ICollection<Formation> Formation { get; set; }
+        public int[] AssetIds { get; set; }
+        public int[]? StrategyIds { get; set; }
+        public int[]? FormationIds { get; set; }
         public decimal PriceVolume { get; set; }
     }
 }
