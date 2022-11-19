@@ -1,5 +1,6 @@
 using Hypance.Core.Domain.Strategies;
 using Hypance.Data;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hypance.WebApi.Controllers
@@ -16,15 +17,19 @@ namespace Hypance.WebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<IndicatorSignal> GetAll()
         {
-            return new string[] { "value1", "value2" };
+            var result = _indicatorSignalRepository.GetAll();
+
+            return result.Data;
         }
 
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IndicatorSignal Get(int id)
         {
-            return "value";
+            var model = _indicatorSignalRepository.Get(x => x.Id == id);
+
+            return model.Data; 
         }
 
         [HttpPost]
@@ -35,14 +40,20 @@ namespace Hypance.WebApi.Controllers
             return Ok();
         }
 
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public IActionResult Put(IndicatorSignal indicatorSignal)
         {
+            _indicatorSignalRepository.Update(indicatorSignal);
+
+            return Ok();
         }
 
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete]
+        public IActionResult Delete(IndicatorSignal indicatorSignal)
         {
+            _indicatorSignalRepository.Delete(indicatorSignal);
+
+            return Ok();
         }
     }
 }
