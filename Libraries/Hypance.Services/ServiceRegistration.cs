@@ -28,6 +28,7 @@ namespace Hypance.Services
             serviceCollection.AddScoped<IBacktestService, BacktestService>();
             serviceCollection.AddScoped<IFormationSignalService, FormationSignalService>();
             serviceCollection.AddScoped<IRepository<FormationSignal>, EntityRepository<FormationSignal>>();
+            serviceCollection.AddScoped<IRepository<Indicator>, EntityRepository<Indicator>>();
         }
     }
 }
