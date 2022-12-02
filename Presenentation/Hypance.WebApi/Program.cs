@@ -52,7 +52,7 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = false, // token değerlerini kullanıclarını belirtme --> www.kullanici.com
         ValidateLifetime = true, // time --> 30 munite
         ValidIssuer = builder.Configuration["Token:Issuer"],
-        ValidAudience = builder.Configuration["Token:Audience"],
+        ValidAudience = builder.Configuration["Token:Audience"], 
 
         LifetimeValidator = (notBefore, expires, securityToken, validationParameters) => expires != null ? expires > DateTime.UtcNow : false, // time control
     };
