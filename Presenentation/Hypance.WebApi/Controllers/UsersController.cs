@@ -2,36 +2,39 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Hypance.Core.AppUser.CreateUser;
+using Hypance.Core.AppUser.UpdatePassword;
 using Hypance.Core.Identity;
+using Hypance.Services.IdentityServices;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Hypance.WebApi.Controllers
 {
     [Authorize]
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class UsersController : ControllerBase
     {
-        private IUserService _userService;
-        public UsersController(IUserService userService)
+        // readonly IMediator _mediator;
+        readonly MailService _mailService;
+        public UsersController(MailService mailService)
         {
-            _userService = userService;
+            _mailService = mailService;
         }
-        [AllowAnonymous]
-        [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] User userParam)
+
+        [HttpPost]
+        public async Task<IActionResult> CreateUser(CreateUserCommandRequest createUserCommandRequest)
         {
-            var user = _userService.Authenticate(userParam.Email, userParam.Password);
-            if (user == null)
-                return BadRequest(new { message = "Kullanici veya şifre hatalı!" });
-            return Ok(user);
+            CreateUserCommandResponse response = await _mediator.Send(createUserCommandRequest);
+            return Ok(response);
         }
-        [HttpGet]
-        public IActionResult GetAll()
+
+        [HttpPost("update-password")]
+        public async Task<IActionResult> UpdatePassword([FromBody] UpdatePasswordCommandRequest updatePasswordCommandRequest)
         {
-            var users = _userService.GetAll();
-            return Ok(users);
+            UpdatePasswordCommandResponse response = await _mediator.Send(updatePasswordCommandRequest);
+            return Ok(response);
         }
     }
 
