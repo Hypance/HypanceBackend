@@ -3,6 +3,7 @@ using System;
 using Hypance.Data.DataProviders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,13 +12,14 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Hypance.Data.Migrations
 {
     [DbContext(typeof(HypanceDbContext))]
-    partial class HypanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221030161918_InitialCreate-3")]
+    partial class InitialCreate3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.9")
+                .HasAnnotation("ProductVersion", "6.0.10")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -25,10 +27,7 @@ namespace Hypance.Data.Migrations
             modelBuilder.Entity("Hypance.Core.Domain.Backtests.Backtest", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<int>("Market")
                         .HasColumnType("integer");
@@ -46,25 +45,14 @@ namespace Hypance.Data.Migrations
                     b.Property<int>("TrendStrategy")
                         .HasColumnType("integer");
 
-                    b.HasKey("Id");
-
                     b.ToTable("Backtests");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Bots.Bot", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
                     b.Property<int[]>("AssetIds")
                         .IsRequired()
                         .HasColumnType("integer[]");
-
-                    b.Property<int>("BotOptions")
-                        .HasColumnType("integer");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -72,6 +60,9 @@ namespace Hypance.Data.Migrations
 
                     b.Property<int[]>("FormationIds")
                         .HasColumnType("integer[]");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
 
                     b.Property<int>("Market")
                         .HasColumnType("integer");
@@ -95,8 +86,6 @@ namespace Hypance.Data.Migrations
                     b.Property<int>("TrendStrategy")
                         .HasColumnType("integer");
 
-                    b.HasKey("Id");
-
                     b.ToTable("Bots");
                 });
 
@@ -108,51 +97,40 @@ namespace Hypance.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BacktestId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BacktestId");
-
                     b.ToTable("Formations");
                 });
 
-            modelBuilder.Entity("Hypance.Core.Domain.Formations.FormationSignal", b =>
+            modelBuilder.Entity("Hypance.Core.Domain.Notifications.Notification", b =>
                 {
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+                    b.Property<int>("Market")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("FormationSignalName")
+                    b.Property<int>("MessageChannel")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("Interval")
+                    b.Property<int>("OrderType")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("boolean");
-
-                    b.Property<int>("Period")
+                    b.Property<int>("PositionType")
                         .HasColumnType("integer");
 
-                    b.Property<bool>("Result")
-                        .HasColumnType("boolean");
+                    b.Property<int>("TrendStrategy")
+                        .HasColumnType("integer");
 
-                    b.Property<string>("SymbolName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("FormationSignals");
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Indicator", b =>
@@ -257,9 +235,6 @@ namespace Hypance.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BacktestId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -269,8 +244,6 @@ namespace Hypance.Data.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BacktestId");
 
                     b.ToTable("Strategies");
                 });
@@ -331,9 +304,6 @@ namespace Hypance.Data.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("BacktestId")
-                        .HasColumnType("integer");
-
                     b.Property<bool>("IsActive")
                         .HasColumnType("boolean");
 
@@ -349,16 +319,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BacktestId");
-
                     b.ToTable("Symbols");
-                });
-
-            modelBuilder.Entity("Hypance.Core.Domain.Formations.Formation", b =>
-                {
-                    b.HasOne("Hypance.Core.Domain.Backtests.Backtest", null)
-                        .WithMany("Formation")
-                        .HasForeignKey("BacktestId");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Signal", b =>
@@ -366,29 +327,6 @@ namespace Hypance.Data.Migrations
                     b.HasOne("Hypance.Core.Domain.Strategies.Strategy", null)
                         .WithMany("Signals")
                         .HasForeignKey("StrategyId");
-                });
-
-            modelBuilder.Entity("Hypance.Core.Domain.Strategies.Strategy", b =>
-                {
-                    b.HasOne("Hypance.Core.Domain.Backtests.Backtest", null)
-                        .WithMany("Strategy")
-                        .HasForeignKey("BacktestId");
-                });
-
-            modelBuilder.Entity("Hypance.Core.Domain.Symbols.Symbol", b =>
-                {
-                    b.HasOne("Hypance.Core.Domain.Backtests.Backtest", null)
-                        .WithMany("Symbols")
-                        .HasForeignKey("BacktestId");
-                });
-
-            modelBuilder.Entity("Hypance.Core.Domain.Backtests.Backtest", b =>
-                {
-                    b.Navigation("Formation");
-
-                    b.Navigation("Strategy");
-
-                    b.Navigation("Symbols");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Strategy", b =>
