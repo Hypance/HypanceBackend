@@ -1,6 +1,5 @@
 ﻿using Hypance.Core.Domain.Bots;
 using Hypance.Core.Domain.Symbols;
-using Hypance.Core.Dtos.Bots;
 using Hypance.Core.Utilites;
 using Hypance.Data;
 using System;
