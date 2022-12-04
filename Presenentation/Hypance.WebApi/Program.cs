@@ -1,5 +1,4 @@
 ﻿using Hypance.Data;
-using Hypance.ScheduledTask;
 using Hypance.Services;
 using Hypance.Services.Symbols;
 

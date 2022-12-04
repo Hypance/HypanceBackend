@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    
     <ProjectReference Include="..\..\Libraries\Hypance.Core\Hypance.Core.csproj" />
+    
     <ProjectReference Include="..\..\Libraries\Hypance.Data\Hypance.Data.csproj" />
+    
     <ProjectReference Include="..\..\Libraries\Hypance.Services\Hypance.Services.csproj" />
     <ProjectReference Include="..\..\Presenentation\Hypance.WebApi\Hypance.WebApi.csproj" />
   </ItemGroup>
