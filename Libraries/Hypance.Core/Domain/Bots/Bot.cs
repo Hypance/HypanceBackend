@@ -22,5 +22,6 @@ namespace Hypance.Core.Domain.Bots
         public int[]? StrategyIds { get; set; }
         public int[]? FormationIds { get; set; }
         public decimal PriceVolume { get; set; }
+        public BotOptions BotOptions { get; set; }
     }
 }
