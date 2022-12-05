@@ -17,7 +17,7 @@ namespace Hypance.WebApi.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<IndicatorSignal> GetAll()
+        public List<IndicatorSignal> GetAll()
         {
             var result = _indicatorSignalRepository.GetAll();
 
@@ -28,32 +28,40 @@ namespace Hypance.WebApi.Controllers
         public IndicatorSignal Get(int id)
         {
             var model = _indicatorSignalRepository.Get(x => x.Id == id);
+            if (model.Success)
+                return model.Data; 
 
-            return model.Data; 
+            return new IndicatorSignal();
         }
 
         [HttpPost]
         public IActionResult Post(IndicatorSignal indicatorSignal)
         {
-            _indicatorSignalRepository.Add(indicatorSignal);
+            var result = _indicatorSignalRepository.Add(indicatorSignal);
+            if (result.Success)
+                return Ok();
 
-            return Ok();
+            return BadRequest();
         }
 
         [HttpPut]
         public IActionResult Put(IndicatorSignal indicatorSignal)
         {
-            _indicatorSignalRepository.Update(indicatorSignal);
+            var result = _indicatorSignalRepository.Update(indicatorSignal);
+            if (result.Success)
+                return Ok();
 
-            return Ok();
+            return BadRequest();
         }
 
         [HttpDelete]
         public IActionResult Delete(IndicatorSignal indicatorSignal)
         {
-            _indicatorSignalRepository.Delete(indicatorSignal);
+            var result = _indicatorSignalRepository.Delete(indicatorSignal);
+            if (result.Success)
+                return Ok();
 
-            return Ok();
+            return BadRequest();
         }
     }
 }

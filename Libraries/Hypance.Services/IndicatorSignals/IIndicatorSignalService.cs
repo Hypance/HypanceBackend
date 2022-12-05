@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hypance.Services.IndicatorSignals
 {
-    public interface IIndicatorSignal
+    public interface IIndicatorSignalService
     {
         
     }
