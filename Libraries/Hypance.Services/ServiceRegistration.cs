@@ -8,7 +8,7 @@ using Hypance.Data;
 using Hypance.Services.Backtests;
 using Hypance.Services.Symbols;
 using Microsoft.Extensions.DependencyInjection;
-using Hypance.Services.CandelStick;
+using Hypance.Services.Candlestick;
 using Hypance.Services.FormationSignals;
 using Hypance.Core.Domain.Formations;
 

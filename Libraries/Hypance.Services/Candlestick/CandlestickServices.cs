@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hypance.Services.CandelStick
+namespace Hypance.Services.Candlestick
 {
-    public interface ICandlestickServices
+    public class CandlestickServices : ICandlestickServices
     {
     }
 }
