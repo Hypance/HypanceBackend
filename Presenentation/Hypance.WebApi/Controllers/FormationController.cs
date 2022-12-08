@@ -29,29 +29,42 @@ namespace Hypance.WebApi.Controllers
         public Formation Get(int id)
         {
             var model = _formationRepository.Get(x => x.Id == id);
-            return model.Data;
+            
+            if(model.Success)
+              return model.Data;
+
+            return new Formation();
         }
       
         [HttpPost]
         public IActionResult Post(Formation formation)
         {
-            _formationRepository.Add(formation);
+            var result = _formationRepository.Add(formation);
+            if(result.Success)
+                return Ok();
 
-            return Ok();
+            return BadRequest();
         }
-     
+
         [HttpPut]
         public IActionResult Put(Formation formation)
         {
-            _formationRepository.Update(formation);
-            return Ok();
+            var result = _formationRepository.Update(formation);
+            
+            if(result.Success)
+                return Ok();
+
+            return BadRequest();
         }
 
         [HttpDelete]
         public IActionResult Delete(Formation formation)
         {
-            _formationRepository.Delete(formation);
-            return Ok();
+            var result = _formationRepository.Delete(formation);
+            if(result.Success)
+                return Ok();
+
+            return BadRequest();
         }
     }
 }
