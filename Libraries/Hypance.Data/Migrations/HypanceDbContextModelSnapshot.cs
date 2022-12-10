@@ -48,7 +48,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Backtests");
+                    b.ToTable("Backtests", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Bots.Bot", b =>
@@ -94,7 +94,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bots");
+                    b.ToTable("Bots", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.Formation", b =>
@@ -121,7 +121,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasIndex("NotificationId");
 
-                    b.ToTable("Formations");
+                    b.ToTable("Formations", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Notifications.Notification", b =>
@@ -153,7 +153,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Notifications");
+                    b.ToTable("Notifications", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Indicator", b =>
@@ -176,7 +176,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Indicators");
+                    b.ToTable("Indicators", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.IndicatorSignal", b =>
@@ -210,7 +210,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("IndicatorSignals");
+                    b.ToTable("IndicatorSignals", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Signal", b =>
@@ -247,7 +247,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasIndex("StrategyId");
 
-                    b.ToTable("Signals");
+                    b.ToTable("Signals", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Strategy", b =>
@@ -278,7 +278,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasIndex("NotificationId");
 
-                    b.ToTable("Strategies");
+                    b.ToTable("Strategies", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Symbols.Candlestick", b =>
@@ -326,7 +326,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candlesticks");
+                    b.ToTable("Candlesticks", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Symbols.Symbol", b =>
@@ -362,7 +362,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasIndex("NotificationId");
 
-                    b.ToTable("Symbols");
+                    b.ToTable("Symbols", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.Formation", b =>
