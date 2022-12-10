@@ -25,7 +25,7 @@ namespace Hypance.Data.DataProviders
         public DbSet<Backtest> Backtests { get; set; }
         public DbSet<Bot> Bots { get; set; }
         public DbSet<Formation> Formations { get; set; }
-        
+        public DbSet<FormationSignal> FormationSignals { get; set; }
         public DbSet<Indicator> Indicators { get; set; }
         public DbSet<IndicatorSignal> IndicatorSignals { get; set; }
         public DbSet<Signal> Signals { get; set; }

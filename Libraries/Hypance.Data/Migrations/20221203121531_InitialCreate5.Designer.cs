@@ -3,6 +3,7 @@ using System;
 using Hypance.Data.DataProviders;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Hypance.Data.Migrations
 {
     [DbContext(typeof(HypanceDbContext))]
-    partial class HypanceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20221203121531_InitialCreate5")]
+    partial class InitialCreate5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +50,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Backtests", (string)null);
+                    b.ToTable("Backtests");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Bots.Bot", b =>
@@ -97,7 +99,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bots", (string)null);
+                    b.ToTable("Bots");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.Formation", b =>
@@ -120,7 +122,6 @@ namespace Hypance.Data.Migrations
                     b.HasIndex("BacktestId");
 
                     b.ToTable("Formations");
-
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.FormationSignal", b =>
@@ -176,7 +177,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Indicators", (string)null);
+                    b.ToTable("Indicators");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.IndicatorSignal", b =>
@@ -210,7 +211,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("IndicatorSignals", (string)null);
+                    b.ToTable("IndicatorSignals");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Signal", b =>
@@ -247,7 +248,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasIndex("StrategyId");
 
-                    b.ToTable("Signals", (string)null);
+                    b.ToTable("Signals");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Strategy", b =>
@@ -274,7 +275,6 @@ namespace Hypance.Data.Migrations
                     b.HasIndex("BacktestId");
 
                     b.ToTable("Strategies");
-
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Symbols.Candlestick", b =>
@@ -322,7 +322,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candlesticks", (string)null);
+                    b.ToTable("Candlesticks");
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Symbols.Symbol", b =>
@@ -354,7 +354,6 @@ namespace Hypance.Data.Migrations
                     b.HasIndex("BacktestId");
 
                     b.ToTable("Symbols");
-
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.Formation", b =>
@@ -398,7 +397,7 @@ namespace Hypance.Data.Migrations
                 {
                     b.Navigation("Signals");
                 });
-
+#pragma warning restore 612, 618
         }
     }
 }

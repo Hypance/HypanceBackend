@@ -1,13 +1,13 @@
-﻿using Hypance.Core.Utilites;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hypance.Services.Bots
+namespace Hypance.Services.FormationSignals
 {
-    public interface IBotService
+    public interface IFormationSignalService
     {
+
     }
 }
