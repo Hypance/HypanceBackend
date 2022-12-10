@@ -1,8 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-
-
-
-
 namespace Hypance.ScheduledTask
 {
     public static class ServiceRegistration

@@ -24,7 +24,7 @@
     <ProjectReference Include="..\..\Libraries\Hypance.Core\Hypance.Core.csproj" />
     <ProjectReference Include="..\..\Libraries\Hypance.Data\Hypance.Data.csproj" />
     <ProjectReference Include="..\..\Libraries\Hypance.Services\Hypance.Services.csproj" />
- 
+    <ProjectReference Include="..\..\ScheduledTask\Hypance.ScheduledTask\Hypance.ScheduledTask.csproj" />
   </ItemGroup>
 
   <ItemGroup>

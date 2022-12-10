@@ -1,8 +1,5 @@
-﻿using Hypance.Core.Domain.Strategies;
-using Hypance.Data;
+﻿using Hypance.Services.TelegramApi;
 using Microsoft.Extensions.Hosting;
-using Hypance.Services.TelegramApi;
-
 
 namespace Hypance.ScheduledTask;
 
@@ -28,8 +25,8 @@ public class SignalControlTask : BackgroundService
             //if (LastSignal.Signals[0] == ClientSignal.Period)
             //{
                 TelegramApiConfig.SendMessage("RSI botu istenilen seviyede");
-           // }
-           
+            // }
+
         }
     }
 }
