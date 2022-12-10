@@ -48,7 +48,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Backtests");
+                    b.ToTable("Backtests", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Bots.Bot", b =>
@@ -97,7 +97,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Bots");
+                    b.ToTable("Bots", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.Formation", b =>
@@ -120,6 +120,7 @@ namespace Hypance.Data.Migrations
                     b.HasIndex("BacktestId");
 
                     b.ToTable("Formations");
+
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.FormationSignal", b =>
@@ -175,7 +176,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Indicators");
+                    b.ToTable("Indicators", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.IndicatorSignal", b =>
@@ -209,7 +210,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("IndicatorSignals");
+                    b.ToTable("IndicatorSignals", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Signal", b =>
@@ -246,7 +247,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasIndex("StrategyId");
 
-                    b.ToTable("Signals");
+                    b.ToTable("Signals", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Strategies.Strategy", b =>
@@ -273,6 +274,7 @@ namespace Hypance.Data.Migrations
                     b.HasIndex("BacktestId");
 
                     b.ToTable("Strategies");
+
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Symbols.Candlestick", b =>
@@ -320,7 +322,7 @@ namespace Hypance.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Candlesticks");
+                    b.ToTable("Candlesticks", (string)null);
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Symbols.Symbol", b =>
@@ -352,6 +354,7 @@ namespace Hypance.Data.Migrations
                     b.HasIndex("BacktestId");
 
                     b.ToTable("Symbols");
+
                 });
 
             modelBuilder.Entity("Hypance.Core.Domain.Formations.Formation", b =>
@@ -395,7 +398,7 @@ namespace Hypance.Data.Migrations
                 {
                     b.Navigation("Signals");
                 });
-#pragma warning restore 612, 618
+
         }
     }
 }

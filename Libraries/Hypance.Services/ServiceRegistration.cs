@@ -8,6 +8,8 @@ using Hypance.Data;
 using Hypance.Services.Backtests;
 using Hypance.Services.Symbols;
 using Microsoft.Extensions.DependencyInjection;
+using Hypance.Core.Domain;
+using Hypance.Services.Formations;
 using Hypance.Services.FormationSignals;
 using Hypance.Core.Domain.Formations;
 
@@ -26,9 +28,12 @@ namespace Hypance.Services
             serviceCollection.AddScoped<IBotService, BotService>();
             serviceCollection.AddScoped<IRepository<Backtest>, EntityRepository<Backtest>>();
             serviceCollection.AddScoped<IBacktestService, BacktestService>();
+            serviceCollection.AddScoped<IRepository<Formation>, EntityRepository<Formation>>();
+            serviceCollection.AddScoped<IFormationService, FormationService>();
             serviceCollection.AddScoped<IFormationSignalService, FormationSignalService>();
             serviceCollection.AddScoped<IRepository<FormationSignal>, EntityRepository<FormationSignal>>();
             serviceCollection.AddScoped<IRepository<Indicator>, EntityRepository<Indicator>>();
+
         }
     }
 }
