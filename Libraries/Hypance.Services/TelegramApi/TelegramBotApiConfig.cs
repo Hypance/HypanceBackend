@@ -16,7 +16,7 @@ namespace Hypance.Services.TelegramApi
 {
     public static class TelegramApiConfig
     {
-        static ITelegramBotClient Bot = new TelegramBotClient("5608179374:AAFpwKxuVMbgBm2ZbCFeERufxCesblNohzM");
+        static ITelegramBotClient Bot = new TelegramBotClient("5155431848:AAEloUrGxV90epvgF31XegNmwI9oTljQYXw");
 
         public static async Task Main()
 
@@ -34,7 +34,7 @@ namespace Hypance.Services.TelegramApi
         {
             
             Message sentMessage = await Bot.SendTextMessageAsync(
-              chatId: 1357802322,
+              chatId: -723963123,
              text: message
             );
         }

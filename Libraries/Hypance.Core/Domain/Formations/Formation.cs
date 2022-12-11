@@ -11,5 +11,9 @@ namespace Hypance.Core.Domain.Formations
     public class Formation : BaseEntity
     {
         public string Name { get; set; }
+
+        public bool IsActive { get; set; }
+
+        public int DefaultPeriod { get; set; }
     }
 }
