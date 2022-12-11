@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Hypance.Core.Domain.Symbols;
-using Hypance.Services.Candlestick;
+﻿using Hypance.Core.Domain.Symbols;
 using Hypance.Data;
 using Microsoft.AspNetCore.Mvc;
-using Hypance.Core.Domain.Common;
-using Hypance.Core.Domain.Bots;
-using Hypance.Core.Utilites;
 
 
 namespace Hypance.WebApi.Controllers

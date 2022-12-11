@@ -15,7 +15,7 @@ public class SignalControlTask : BackgroundService
     */
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        using var timer = new PeriodicTimer(TimeSpan.FromSeconds(10));
+        using var timer = new PeriodicTimer(TimeSpan.FromDays(1));
 
         while (await timer.WaitForNextTickAsync(stoppingToken))
         {
