@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Hypance.Core.Utilites
+namespace Hypance.SharedKernel.Results
 {
     public class DataResult<T> : Result, IDataResult<T>
     {
