@@ -17,8 +17,10 @@
 
   <ItemGroup>
     <None Remove="Domain\Indicators\" />
+    <None Remove="Utilites\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Domain\Indicators\" />
+    <Folder Include="Utilites\" />
   </ItemGroup>
 </Project>
